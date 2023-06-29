@@ -15,12 +15,14 @@ public class ClientHandler extends Thread{
 
     private Socket clientSocket;
     private PrintWriter out = null; // allocate to write answer to client.
-    static ShoeManager shoeManager = new ShoeManager();
+
+    private ShoeManager shoeManager;
     String answer;
 
 
-    public ClientHandler(Socket clientSocket) {
+    public ClientHandler(Socket clientSocket, ShoeManager shoeManager){
         this.clientSocket = clientSocket;
+        this.shoeManager = shoeManager;
         InetAddress inetAddress = this.clientSocket.getInetAddress();
         System.out.println("Connected from: " + inetAddress);
     }
