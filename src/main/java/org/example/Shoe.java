@@ -1,33 +1,43 @@
 package org.example;
 
-public class Car {
-    private int id;
-    private String brand;
+public class Shoe {
+    private static int id=0;
+    private int shoeId;
+
+    private String name;
+
     private double price;
-    private double km;
+    private String genre;
 
-
-    public Car(int id, String brand, double price, double km) {
-        this.id = id;
-        this.brand = brand;
+    public Shoe(String name, double price, String genre) {
+        this.shoeId = ++id;
+        this.name = name;
         this.price = price;
-        this.km = km;
+        this.genre = genre;
     }
 
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public static void setId(int id) {
+        Shoe.id = id;
     }
 
-    public String getBrand() {
-        return brand;
+    public int getShoeId() {
+        return shoeId;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setShoeId(int shoeId) {
+        this.shoeId = shoeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getPrice() {
@@ -38,11 +48,11 @@ public class Car {
         this.price = price;
     }
 
-    public double getKm() {
-        return km;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setKm(double km) {
-        this.km = km;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }
